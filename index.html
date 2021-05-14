@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .centerbtn {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .centertxt {
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes my-animation {
+            from {
+                color:rgb(0, 255, 0);
+                font-size: 400px;
+            }
+            to {
+                color: black;
+                font-size: 30px;
+            }
+        }
+        .run-animation {
+            position: relative;
+            animation: my-animation .25s;
+        }
+        .yesorno {
+            color: black;
+            font-size: 40px;
+            animation-fill-mode: forwards
+        }
+        .thebtnclass {
+            font-family: Arial;
+            border-color: transparent;
+            color: black;
+            position: relative;
+            border-radius: 20px;
+            word-wrap: none;
+            white-space: nowrap;
+            transition: background-color .125s linear;
+            transition: color .125s linear;
+            background-color: rgb(0, 255, 0);
+            width: 125px;
+            height: 50px;
+            font-size: 16px;
+            text-align: left;
+        }
+        .thebtnclass:hover {
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <body>
+        <div class="centerbtn">
+        <button id="button" class="thebtnclass"><center class="center">Yes or No</center></button>
+        </div>
+        <div class="centertxt">
+        <h1 class="yesorno" id="theh1">Maybe?</h1>
+        </div>
+    </body>
+    <script>
+        const element = document.getElementById("button")
+        const element2 = document.getElementById("theh1")
+        element.addEventListener("click", function(e){
+            e.preventDefault;
+            element2.classList.remove("run-animation");
+            void element2.offsetWidth;
+            const yesorno = ["Yes", "No"]
+            element2.innerHTML = yesorno[Math.floor(Math.random() * 2)]
+            element2.classList.add("run-animation");
+        }, false);
+    </script>
+</html>
