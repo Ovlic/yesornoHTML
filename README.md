@@ -1,2 +1,2 @@
 # yesornoHTML
-(Site Link)[https://ovlic.github.io/yesornoHTML]
+[Site Link](https://ovlic.github.io/yesornoHTML)
